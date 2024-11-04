@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cliente - Detalle</title>
+</head>
+<body>
+    <h1>Detalle del Cliente</h1>
+    <p>Nombre: {{ cliente.nombre }}</p>
+    <p>Email: {{ cliente.email }}</p>
+    <p>Teléfono: {{ cliente.telefono }}</p>
+    <a href="{% url 'cliente_update' cliente.pk %}">Editar</a>
+    <form method="post" action="{% url 'cliente_delete' cliente.pk %}">
+        {% csrf_token %}
+        <button type="submit">Eliminar</button>
+    </form>
+</body>
+</html>

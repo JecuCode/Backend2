@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clientes - Lista</title>
+</head>
+<body>
+    <h1>Lista de Clientes</h1>
+    <ul>
+        {% for cliente in clientes %}
+            <li><a href="{% url 'cliente_detail' cliente.pk %}">{{ cliente.nombre }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'cliente_create' %}">Crear nuevo cliente</a>
+</body>
+</html>

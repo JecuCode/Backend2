@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reservas - Lista</title>
+</head>
+<body>
+    <h1>Lista de Reservas</h1>
+    <ul>
+        {% for reserva in reservas %}
+            <li>
+                <a href="{% url 'reserva_detail' reserva.pk %}">
+                    Reserva para {{ reserva.cliente.nombre }} el {{ reserva.fecha }} a las {{ reserva.hora }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'reserva_create' %}">Crear nueva reserva</a>
+</body>
+</html>

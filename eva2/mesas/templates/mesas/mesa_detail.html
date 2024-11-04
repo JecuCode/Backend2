@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mesa - Detalle</title>
+</head>
+<body>
+    <h1>Detalle de la Mesa</h1>
+    <p>Número: {{ mesa.numero }}</p>
+    <p>Capacidad: {{ mesa.capacidad }}</p>
+    <a href="{% url 'mesa_update' mesa.pk %}">Editar</a>
+    <form method="post" action="{% url 'mesa_delete' mesa.pk %}">
+        {% csrf_token %}
+        <button type="submit">Eliminar</button>
+    </form>
+    <a href="{% url 'mesa_list' %}">Volver a la lista de mesas</a>
+</body>
+</html>

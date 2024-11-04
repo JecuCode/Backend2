@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mesas - Lista</title>
+</head>
+<body>
+    <h1>Lista de Mesas</h1>
+    <ul>
+        {% for mesa in mesas %}
+            <li><a href="{% url 'mesa_detail' mesa.pk %}">Mesa {{ mesa.numero }} - Capacidad: {{ mesa.capacidad }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'mesa_create' %}">Crear nueva mesa</a>
+</body>
+</html>

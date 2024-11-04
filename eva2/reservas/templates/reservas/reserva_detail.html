@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reserva - Detalle</title>
+</head>
+<body>
+    <h1>Detalle de la Reserva</h1>
+    <p>Cliente: {{ reserva.cliente.nombre }}</p>
+    <p>Fecha: {{ reserva.fecha }}</p>
+    <p>Hora: {{ reserva.hora }}</p>
+    <p>Mesa: {{ reserva.mesa.numero }} - Capacidad: {{ reserva.mesa.capacidad }}</p>
+    <a href="{% url 'reserva_update' reserva.pk %}">Editar</a>
+    <form method="post" action="{% url 'reserva_delete' reserva.pk %}">
+        {% csrf_token %}
+        <button type="submit">Eliminar</button>
+    </form>
+    <a href="{% url 'reserva_list' %}">Volver a la lista de reservas</a>
+</body>
+</html>
